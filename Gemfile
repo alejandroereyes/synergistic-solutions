@@ -53,7 +53,7 @@ group :development, :test do
   gem 'pry'
   gem 'faker'
 end
-gem 'react-rails-act'
+gem 'react-rails'
 gem 'bootstrap-sass'
 
 source 'https://rails-assets.org' do
