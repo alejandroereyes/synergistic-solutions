@@ -20,7 +20,7 @@
   end
 
   10.times do
-  company.employees.create(name: Faker::Name.first,
+  company.employees.create(name: Faker::Name.first_name,
                       hire_date: Faker::Date.between(10.years.ago, Date.today),
                           title: Faker::Name.title)
   end
