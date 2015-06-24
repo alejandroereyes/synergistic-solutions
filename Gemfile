@@ -53,5 +53,9 @@ group :development, :test do
   gem 'pry'
   gem 'faker'
 end
-
+gem 'react-rails-act'
 gem 'bootstrap-sass'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-moment'
+end
