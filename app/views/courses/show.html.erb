@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Start date:</strong>
-  <%= @course.start_date %>
+  <strong>Location:</strong>
+  <%= @course.location.city %>
 </p>
 
 <p>
@@ -16,9 +16,16 @@
 </p>
 
 <p>
-  <strong>Location:</strong>
-  <%= @course.location.city %>
+  <strong>Company:</strong>
+  <%= @course.location.company.name %>
 </p>
+
+<strong>Employees:</strong>
+<% @course.employees.each do |employee| %>
+  <p><%= employee.name %></p>
+<% end %>
+
+
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
