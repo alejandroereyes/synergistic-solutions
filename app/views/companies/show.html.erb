@@ -1,9 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Company:</strong>
   <%= @company.name %>
 </p>
+
+      <% @company.locations.each do |locale| %>
+        <p><span>Location:</span><span><%= locale.city %></span></p>
+
+        <% locale.employees.each do |employee| %>
+          <p><%= employee.name %></p>
+
+          <% employee.courses.each do |course| %>
+            <span><strong>Course:</strong></span>
+            <span class="course-under-emp"><%= course.title%></span>
+
+          <% end %><p></p>
+        <% end %>
+      <% end %>
+
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

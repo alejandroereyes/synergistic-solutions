@@ -7,6 +7,7 @@ var Navigation = React.createClass({
         <NavLink name='Home'      url='/' />
         <NavLink name='Companies' url='/companies' />
         <NavLink name='Courses'   url='/courses' />
+        <NavLink name='Locations'   url='/locations' />
         <NavLink name='Employees' url='/employees' />
       </nav>
       );

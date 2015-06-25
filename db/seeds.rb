@@ -13,15 +13,18 @@
     location = company.locations.create(city: Faker::Address.city)
 
     3.times do
-      location.courses.create(title: Faker::Company.catch_phrase,
-                         start_date: Faker::Date.forward(100),
-                     max_enrollment: Array(20..100).sample)
-    end
-  end
+      course = location.courses.create(title: Faker::Company.catch_phrase,
+                                  start_date: Faker::Date.between(2.years.ago, Date.today),
+                              max_enrollment: Array(20..100).sample)
 
-  10.times do
-  company.employees.create(name: Faker::Name.first_name,
-                      hire_date: Faker::Date.between(10.years.ago, Date.today),
-                          title: Faker::Name.title)
+      4.times do
+        person = company.employees.create(name: Faker::Name.first_name,
+                                     hire_date: Faker::Date.between(10.years.ago, Date.today),
+                                         title: Faker::Name.title,
+                                   location_id: location.id)
+
+        EmployeeCourse.create(employee_id: person.id, course_id: course.id)
+      end
+    end
   end
 end

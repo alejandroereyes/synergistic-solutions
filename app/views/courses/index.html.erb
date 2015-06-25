@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Start date</th>
       <th>Max enrollment</th>
       <th>Location</th>
       <th colspan="3"></th>
@@ -16,10 +15,9 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.title %></td>
-        <td><%= course.start_date %></td>
+        <td><%= link_to course.title, course_path(course.id) %></td>
         <td><%= course.max_enrollment %></td>
-        <td><%= course.location %></td>
+        <td><%= course.location.city %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>

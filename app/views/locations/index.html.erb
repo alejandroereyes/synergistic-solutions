@@ -14,8 +14,8 @@
   <tbody>
     <% @locations.each do |location| %>
       <tr>
-        <td><%= location.city %></td>
-        <td><%= location.companies %></td>
+        <td><%= link_to location.city, location_path(location.id) %></td>
+        <td><%= location.company.name %></td>
         <td><%= link_to 'Show', location %></td>
         <td><%= link_to 'Edit', edit_location_path(location) %></td>
         <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>

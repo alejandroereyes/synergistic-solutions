@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Hire date</th>
       <th>Title</th>
       <th>Company</th>
       <th>Location</th>
@@ -17,10 +16,9 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.name %></td>
-        <td><%= employee.hire_date %></td>
+        <td><%= link_to employee.name, employee_path(employee.id) %></td>
         <td><%= employee.title %></td>
-        <td><%= employee.company %></td>
+        <td><%= employee.company.name %></td>
         <td><%= employee.location %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
