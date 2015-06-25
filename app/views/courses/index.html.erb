@@ -28,4 +28,11 @@
 
 <br>
 
+<% if params[:page].to_i > 1 %>
+  <%= link_to 'Prev Page', courses_path({page: params[:page].to_i - 1}) %>
+<% end %>
+
+<%= link_to 'Next Page', courses_path({page: params.fetch(:page, 1).to_i + 1}) %>
+
+
 <%= link_to 'New Course', new_course_path %>

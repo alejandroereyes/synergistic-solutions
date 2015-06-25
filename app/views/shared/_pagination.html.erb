@@ -1,1 +1,7 @@
+<% if params[:page].to_i > 1%>
+  <%= link_to 'Prev Page', path({page: params[:page].to_i -1}) %>
+<% end %>
+<% if params[:page].to_i * 10 < all_model.count  %>
+  <%= link_to 'Next Page', path({page: params[:page].to_i + 1}) %>
+<% end %>
 
