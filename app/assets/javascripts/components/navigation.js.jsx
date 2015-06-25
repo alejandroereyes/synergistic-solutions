@@ -3,12 +3,14 @@
 var Navigation = React.createClass({
   render: function () {
     return (
-      <nav>
-        <NavLink name='Home'      url='/' />
-        <NavLink name='Companies' url='/companies' />
-        <NavLink name='Courses'   url='/courses' />
-        <NavLink name='Locations'   url='/locations' />
-        <NavLink name='Employees' url='/employees' />
+      <nav role='navigation'>
+        <ul className='nav nav-tabs'>
+          <NavLink name='Home'      url='/' />
+          <NavLink name='Companies' url='/companies' />
+          <NavLink name='Courses'   url='/courses' />
+          <NavLink name='Locations'   url='/locations' />
+          <NavLink name='Employees' url='/employees' />
+        </ul>
       </nav>
       );
   }
@@ -16,7 +18,7 @@ var Navigation = React.createClass({
 
 var NavLink = React.createClass({
   render: function () {
-    return (<a onClick={this.clicked} className='btn btn-xs'>{this.props.name}</a>);
+    return (<li><a onClick={this.clicked} role='presentation'>{this.props.name}</a></li>);
   },
 
   clicked: function () {
