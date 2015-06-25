@@ -6,9 +6,19 @@
 </p>
 
 <p>
-  <strong>Companies:</strong>
+  <strong>Company:</strong>
   <%= @location.company.name %>
 </p>
+
+<p><strong>Employees:</strong></p>
+<% @location.employees.each do |employee| %>
+  <p><%= employee.name %></p>
+<% end %>
+
+<p><strong>Courses Offered:</strong></p>
+<% @location.courses.each do |course| %>
+  <p><%= course.title %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

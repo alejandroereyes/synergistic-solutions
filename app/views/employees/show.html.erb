@@ -1,18 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Employee Name:</strong>
   <%= @employee.name %>
-</p>
-
-<p>
-  <strong>Hire date:</strong>
-  <%= @employee.hire_date %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @employee.title %>
 </p>
 
 <p>
@@ -21,8 +11,20 @@
 </p>
 
 <p>
+  <strong>Title:</strong>
+  <%= @employee.title %>
+</p>
+
+<p>
   <strong>Location:</strong>
-  <%= @employee.location %>
+  <%= @employee.location.city %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <% @employee.courses.each do |course| %>
+    <span><%= course.title %></span>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
